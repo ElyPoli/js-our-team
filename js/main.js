@@ -54,27 +54,41 @@ const membersOfTeam = [
     },
 ];
 
-//console.log(membersOfTeam);
-
-// Stampo i membri del team
+// Creo le card dei membri del team
 for (let i = 0; i < membersOfTeam.length; i++) {
-    // console.log(membersOfTeam[i].nome);
-    // console.log(membersOfTeam[i].ruolo);
-    // console.log(membersOfTeam[i].foto);
-    
-    //console.log(`Il ${i+1}° membro del team è ${membersOfTeam[i].nome}, lavora nel ruolo di ${membersOfTeam[i].ruolo} e questa è una sua foto: ${membersOfTeam[i].foto}`);
 
-    const memberName = document.createElement("h3");
-    memberName.textContent = membersOfTeam[i].name;
+    const memberCardBox = document.createElement("div");
+    memberCardBox.classList.add("col-12", "col-sm-6", "col-lg-4");
 
-    const memberRole = document.createElement("p");
-    memberRole.textContent = membersOfTeam[i].role;
+    const memberCard = document.createElement("div");
+    memberCard.classList.add("card", "border-0", "my-card", "m-3");
+
+    const memberCardBody = document.createElement("div");
+    memberCardBody.classList.add("card-body", "text-center");
 
     const memberPhoto = document.createElement("img");
     memberPhoto.src = `img/${membersOfTeam[i].photo}`;
     memberPhoto.alt = membersOfTeam[i].photo;
+    memberPhoto.classList.add("card-img-top");
 
-    boxTeam.append(memberName);
-    boxTeam.append(memberRole);
-    boxTeam.append(memberPhoto);
+    const memberName = document.createElement("h5");
+    memberName.textContent = membersOfTeam[i].name;
+    memberName.classList.add("card-title", "fw-bold");
+
+    const memberRole = document.createElement("p");
+    memberRole.textContent = membersOfTeam[i].role;
+    memberRole.classList.add("card-text");
+
+    // Richiamo la funzione con cui stampo a schermo
+    printMemberCard(memberCardBox, memberCard, memberCardBody, memberPhoto, memberName, memberRole);
+}
+
+// Funzione in cui stampo a schermo
+function printMemberCard(memberCardBox, memberCard, memberCardBody, memberPhoto, memberName, memberRole) {
+    boxTeam.append(memberCardBox);
+    memberCardBox.append(memberCard);
+    memberCard.append(memberPhoto);
+    memberCard.append(memberCardBody);
+    memberCardBody.append(memberName);
+    memberCardBody.append(memberRole);
 }

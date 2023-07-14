@@ -1,0 +1,25 @@
+:root {
+    --bs-primary: #f5f5f1;
+    --bs-primary-rgb: 245, 245, 241;
+}
+
+main {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+    max-width: 60rem;
+}
+
+#box-team {
+    max-width: 60rem;
+}
+
+.my-card {
+    transition: 400ms;
+}
+
+.my-card:hover {
+    transform: scale(.98);
+    transition: 400ms;
+}
