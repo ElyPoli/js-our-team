@@ -54,3 +54,12 @@ const membersOfTeam = [
 
 console.log(membersOfTeam);
 
+
+for(let i = 0; i < membersOfTeam.length; i++) {
+    // console.log(membersOfTeam[i].nome);
+    // console.log(membersOfTeam[i].ruolo);
+    // console.log(membersOfTeam[i].foto);
+
+    console.log(`Il ${i+1}° membro del team è ${membersOfTeam[i].nome}, lavora nel ruolo di ${membersOfTeam[i].ruolo} e questa è una sua foto: ${membersOfTeam[i].foto}`);
+}
+
